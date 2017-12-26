@@ -1,0 +1,8 @@
+body { background-color: #a7a7a7; color: #000!important; }
+#chartdiv {
+  width: 100%;
+  height: 450px;
+}
+
+a,tspan{font-size: 150%;}
+h2{text-align: center;}
