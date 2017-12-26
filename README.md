@@ -4,6 +4,7 @@
 Example of MapReduce wrote in python that analyse the feelings of 95.580 twits from USA.
 
 [Map chart](https://venancioromero.github.io/Analysis-of-feelings-USA/)
+[video](https://www.youtube.com/watch?v=421QxMqSIno&feature=youtu.be)
 
 for execute : 
 
