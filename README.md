@@ -3,6 +3,8 @@
 #
 Example of MapReduce wrote in python that analyse the feelings of 95.580 twits from USA.
 
+(Map chart)[https://venancioromero.github.io/Analysis-of-feelings-USA/]
+
 for execute : 
 
 - In shell:
@@ -10,4 +12,4 @@ for execute :
 
 - In haddop:
 
-```hadoop jar /usr/lib/hadoop-mapreduce/hadoop-streaming.jar  -files mapper.py,reducer.py,states,dic.txt -mapper mapper.py -reducer reducer.py -input twits -output output ```
+```$ hadoop jar /usr/lib/hadoop-mapreduce/hadoop-streaming.jar  -files mapper.py,reducer.py,states,dic.txt -mapper mapper.py -reducer reducer.py -input twits -output output ```
