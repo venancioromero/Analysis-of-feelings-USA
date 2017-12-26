@@ -9,13 +9,9 @@ nameStates = {}
 def addScore(key,value):
     if key in scoreDict:
         scoreDict[key] += value
-    else:
-        scoreDict[key] = value
-
-def increaseCount(key):
-    if key in countMessages:
         countMessages[key] += 1
     else:
+        scoreDict[key] = value
         countMessages[key] = 1
         
 def normalizeScore():
@@ -30,8 +26,8 @@ def printDict(dicti):
 def main():
     for line in sys.stdin:
         key, value = line.strip().split('\t', 1)
-        increaseCount(key)   
         addScore(key,int(value))
+
     normalizeScore()
     printDict(scoreDict)
 
