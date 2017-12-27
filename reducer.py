@@ -1,35 +1,26 @@
 #!/usr/bin/env python
-import json,sys, operator,math
-
-countMessages = {}
-scoreDict = {}
-nameStates = {}
-
-
-def addScore(key,value):
-    if key in scoreDict:
-        scoreDict[key] += value
-        countMessages[key] += 1
-    else:
-        scoreDict[key] = value
-        countMessages[key] = 1
-        
-def normalizeScore():
-    for x in scoreDict:
-        if countMessages[x] > 0:
-            scoreDict[x] = scoreDict[x]*100/countMessages[x]
-
-def printDict(dicti):
-    for x in dicti:
-        print '%s\t%s' % (x,dicti[x])
+import sys
+def printLine(s,i,i2):
+    print '%s\t%s' % (s,i*100/i2)
 
 def main():
+    old_key = ""
+    score = 0
+    num_msg = 0
+    
     for line in sys.stdin:
+        
         key, value = line.strip().split('\t', 1)
-        addScore(key,int(value))
+        if old_key != key and old_key != "":
+            printLine(old_key,score,num_msg)
+            score = 0
+            num_msg = 0 
 
-    normalizeScore()
-    printDict(scoreDict)
+        old_key = key
+        score += int(value)
+        num_msg += 1
+
+    printLine(old_key,score,num_msg)
 
 if __name__ == '__main__':
     main()
