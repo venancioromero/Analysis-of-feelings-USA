@@ -13,7 +13,7 @@ for execute :
 $ cat twits | ./mapper.py | sort | ./reducer.py
 ```
 
-- In haddop:
+- In hadoop:
 
 ```bash
 $ hadoop jar /usr/lib/hadoop-mapreduce/hadoop-streaming.jar  -files mapper.py,reducer.py,states,dic.txt -mapper mapper.py -reducer reducer.py -input twits -output output 
